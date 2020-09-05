@@ -10,7 +10,7 @@ router.get('/login', function(req, res) {
   res.render('accounts/login', {message: req.flash('loginMessage')})
 });
 
-router.post("/login", passport.authentication('local-login', {
+router.post("/login", passport.authenticate('local-login', {
   successRedirect: '/profile',
   failureRedirect: "/login",
   failureFlesh: true
